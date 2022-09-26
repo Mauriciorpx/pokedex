@@ -414,6 +414,10 @@ h3 span{
   font-weight: bold;
 }
 
+.center img{
+ width: 70%;
+}
+
 .other-info{
   display: flex;
   align-items: center;
@@ -512,7 +516,7 @@ h3::after{
 
 /* Media Queries */
 
-@media only screen and (max-width : 425px){
+@media only screen and (max-width : 600px){
   .basic-info{
     flex-direction: column;
   }
@@ -528,5 +532,7 @@ h3::after{
   .type{
     margin-bottom: 10px;
   }
+
+  
 }
 /* ------------------ */
