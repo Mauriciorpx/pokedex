@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 import ReactPaginate from "react-paginate";
 import logo from "../img/Pokemon-Logo.png";
+import { changeUser } from "../store/slices/user.slice";
+import { useDispatch } from "react-redux";
 
 const PER_PAGE = 16;
 
@@ -15,6 +17,8 @@ const Pokedex = () => {
   const [pokeSearch, setPokeSearch] = useState("");
   const [pokeTypes, setPokeTypes] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+
+  const dispatch = useDispatch();
 
   /* Pagination */
   function handlePageClick({ selected: selectedPage }) {
@@ -54,6 +58,11 @@ const Pokedex = () => {
 
   return (
     <div className="main-container">
+      <div className="exit">
+        <button onClick={() => dispatch(changeUser(""))}>
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
       <img src={logo} alt="pokemon logo" />
       <h2>
         Welcome {user}, here you can find the info of your favorite pokemons

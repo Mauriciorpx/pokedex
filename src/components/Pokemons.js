@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux/es/exports";
 import { useParams } from "react-router-dom";
 import { ProgressBar } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Pokemons = () => {
   const user = useSelector((state) => state.user);
@@ -27,6 +28,10 @@ const Pokemons = () => {
 
   //On the bracers is necessary put the parameter of the specific route f.e id, name  ..... in this case is "id"
 
+  /* Define navigate function to go back */
+
+  const navigate = useNavigate();
+
   return (
     <div
       className="pokemon__detail"
@@ -37,6 +42,12 @@ const Pokemons = () => {
       }}
     >
       <div className="container-detail">
+        <div className="back-button">
+          {" "}
+          <button onClick={() => navigate("/pokedex")}>
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
         <div className="main-info">
           <div className="pokemon__detail--logo">
             <img
