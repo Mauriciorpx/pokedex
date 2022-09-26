@@ -166,6 +166,10 @@
   
 }
 
+.pokemon-stats{
+  text-transform: capitalize;
+}
+
 .pokemon-img img{
   width: 40%;
   height: 70%;
@@ -285,7 +289,7 @@
 
 
 select{
-  width: 25%;
+  width: 300px;
   border: none;
   border-radius: 30px;
   outline: none;
@@ -504,4 +508,25 @@ h3::after{
   border-radius: 5px;
 }
 
+/* ------------------ */
+
+/* Media Queries */
+
+@media only screen and (max-width : 425px){
+  .basic-info{
+    flex-direction: column;
+  }
+
+  .other-info{
+    flex-direction: column;
+  }
+
+  .type, .abilities{
+    width: 65vw;
+  }
+
+  .type{
+    margin-bottom: 10px;
+  }
+}
 /* ------------------ */
